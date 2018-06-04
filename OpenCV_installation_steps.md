@@ -73,7 +73,11 @@ Type "yes" to add anaconda3 installed location to PATH. \
 Just type "no" \
 ![ana5](Opencv_installation_images/ana5.png)
 
-### Step 4: Download OpenCV repository.
+### Step 4 (Optional): Install CUDA and cuDNN
+Follow the steps in the file [CUDA_Installation_Steps.md](CUDA_installation_steps.md). \
+If you do not know what CUDA and cuDNN are, skip this step.
+
+### Step 5: Download OpenCV repository.
 
 If you are copy pasting, Please note that you will be downloading version 3.3.1.
 ```
@@ -84,7 +88,7 @@ git checkout 3.3.1
 cd ..
 ```
 
-### Step 5: Download OpenCV Contrib repository.
+### Step 6: Download OpenCV Contrib repository.
 If you are copy pasting, Please note that you will be downloading version 3.3.1.
 ```
 git clone https://github.com/opencv/opencv_contrib.git
@@ -93,10 +97,39 @@ git checkout 3.3.1
 cd ..
 ```
 
-### Step 6 Make build directory in OpenCV directory
+### Step 7: Make build directory in OpenCV directory
 ```
 cd opencv
 mkdir build
 cd build
 ```
  
+ 
+ ### Step 8: Run CMake
+ 
+ Without CUDA
+ ```
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_C_EXAMPLES=ON \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D WITH_TBB=ON \
+      -D WITH_V4L=ON \
+      -D WITH_QT=ON \
+      -D WITH_OPENGL=ON \
+      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+      -D BUILD_EXAMPLES=ON ..
+```
+With CUDA
+ ```
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+      -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D INSTALL_C_EXAMPLES=ON \
+      -D INSTALL_PYTHON_EXAMPLES=ON \
+      -D WITH_TBB=ON \
+      -D WITH_V4L=ON \
+      -D WITH_QT=ON \
+      -D WITH_OPENGL=ON \
+      -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+      -D BUILD_EXAMPLES=ON ..
+```
