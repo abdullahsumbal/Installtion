@@ -8,6 +8,15 @@ Please Note: If you have a nvidia card only then proceed with this documents.
  ```
  Select the driver for your nvidia graphics card. In the image below, I am selecting GTX 645 card for Linux 
  operating system.
+ 
+ Go the download directory. I am assuming it is in the Downloads directory.
+ ```
+ cd ~/Downloads
+ chmod +x NVIDIA-Linux-x86_64-390.59.run
+ sudo ./NVIDIA-Linux-x86_64-390.59.run
+ 
+  
+ ```
  ![nvidia](nvidia_images/nvidia.png) 
  
 ### Step 2: Download CUDA ToolKit
@@ -17,7 +26,7 @@ Download CUDA from the following link
 https://developer.nvidia.com/cuda-80-ga2-download-archive
 ```
 Select the option shown in the image below
-![cuda1](nvidia_images/cuda1.png) 
+![cuda1](nvidia_images/cuda1.png)  
 
 ### Step 3: Install CUDA Toolkit
 ```
