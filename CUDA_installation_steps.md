@@ -1,23 +1,25 @@
 This is a step by step instructions for installing CUDA and cuDNN on Ubuntu Operating System.
 Please Note: If you have a nvidia card only then proceed with this documents.
  
- ### Step 1: Download and Install NVIDIA card
- Go the following page
- ```
- http://www.nvidia.com/Download/index.aspx?lang=en-us 
- ```
- Select the driver for your nvidia graphics card. In the image below, I am selecting GTX 645 card for Linux 
- operating system.
+ ### Step 1: Download and Install NVIDIA card driver
+
+First check which driver version is supported by your graphics card. 
+Go to the following page and and fill in your operating system and graphics card name.
+```
+http://www.nvidia.com/Download/index.aspx?lang=en-us 
+``` 
+The below shows that linux system and GTX 645 selected. \
+![nvidia](nvidia_images/nvidia.png) \
+ Press search and you see the version of the card driver supported as shown in the image below. \
+ ![nvidia](nvidia_images/nvidia3.png) \
  
- Go the download directory. I am assuming it is in the Downloads directory.
- ```
- cd ~/Downloads
- chmod +x NVIDIA-Linux-x86_64-390.59.run
- sudo ./NVIDIA-Linux-x86_64-390.59.run
  
-  
+```
+sudo add-apt-repository ppa:graphics-drivers
+sudo apt-get update
+sudo apt-get install nvidia-390  
  ```
- ![nvidia](nvidia_images/nvidia.png) 
+
  
 ### Step 2: Download CUDA ToolKit
 Please note that this installation is for CUDA 8.0.
