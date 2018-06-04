@@ -125,11 +125,24 @@ With CUDA
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
       -D INSTALL_C_EXAMPLES=ON \
+      -D WITH_CUDA=ON -D WITH_CUBLAS=ON \
       -D INSTALL_PYTHON_EXAMPLES=ON \
       -D WITH_TBB=ON \
       -D WITH_V4L=ON \
       -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+      -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
       -D BUILD_EXAMPLES=ON ..
+```
+
+### Step 9: Compile and install 
+``` 
+# find out number of CPU cores in your machine
+nproc
+# substitute 4 by output of nproc
+make -j4
+sudo make install
+sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
+sudo ldconfig
 ```

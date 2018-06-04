@@ -10,16 +10,18 @@ http://www.nvidia.com/Download/index.aspx?lang=en-us
 ``` 
 The below shows that linux system and GTX 645 selected. \
 ![nvidia](nvidia_images/nvidia.png) \
- Press search and you see the version of the card driver supported as shown in the image below. \
+ Press search and you will see the version of the card driver supported as shown in the image below. \
  ![nvidia](nvidia_images/nvidia3.png) \
- 
- 
 ```
 sudo add-apt-repository ppa:graphics-drivers
 sudo apt-get update
 sudo apt-get install nvidia-390  
  ```
 
+reboot your system
+```
+reboot 
+```
  
 ### Step 2: Download CUDA ToolKit
 Please note that this installation is for CUDA 8.0.
@@ -66,3 +68,7 @@ sudo dpkg -i libcudnn7-dev_7.1.4.18-1+cuda8.0_amd64.deb
 #Install the code samples and the cuDNN Library User Guide, for example:
 sudo dpkg -i libcudnn7-doc_7.1.4.18-1+cuda8.0_amd64.deb 
 ```
+
+### Note:
+This document is inspired by
+https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
