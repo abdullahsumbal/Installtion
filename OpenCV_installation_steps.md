@@ -33,6 +33,7 @@ sudo apt-get install libvorbis-dev libxvidcore-dev -y
 sudo apt-get install libopencore-amrnb-dev libopencore-amrwb-dev -y
 sudo apt-get install x264 v4l-utils -y
 sudo apt-get install wget -y
+sudo apt-get isntall cmake-gui
 
 # Optional dependencies
 sudo apt-get install libprotobuf-dev protobuf-compiler -y
@@ -117,6 +118,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_V4L=ON \
       -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
+      -D BUILD_NEW_PYTHON_SUPPORT=ON \
+      -D BUILD_opencv_python3=ON \
+      -D HAVE_opencv_python3=ON \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       -D BUILD_EXAMPLES=ON ..
 ```
@@ -131,11 +135,22 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D WITH_V4L=ON \
       -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
+      -D BUILD_NEW_PYTHON_SUPPORT=ON \
+      -D BUILD_opencv_python3=ON \
+      -D HAVE_opencv_python3=ON \
+      -D PYTHON_DEFAULT_EXECUTABLE=/home/sumbal/anaconda3/bin/python \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       -DCUDA_NVCC_FLAGS="-D_FORCE_INLINES" \
       -D BUILD_EXAMPLES=ON ..
 ```
 
+Must do for python OpenCV \
+``` cmake-gui ..``` \
+Set the correct paths for python as shown in the image below. \
+![ana7](Opencv_installation_images/ana7.png) 
+
+Press Configure and then Generate \
+Note: paths for python3 are only set up in the image.
 ### Step 9: Compile and install 
 ``` 
 # find out number of CPU cores in your machine
@@ -143,6 +158,24 @@ nproc
 # substitute 4 by output of nproc
 make -j4
 sudo make install
-sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
-sudo ldconfig
 ```
+
+Find the where "cv*.so" file is stored for OpenCV python.
+```
+cd ~/anaconda3
+sudo find -name "cv*.so"
+```
+
+In my case, "cv*.so" was in ~/anaconda3/pkgs/opencv3-3.1.0-py36_0/lib/python3.6/site-packages/cv2.cpython-36m-x86_64-linux-gnu.so
+
+Now you just have to link the .so files.
+```
+# Here we creating a soft link in the site-packages directory for cv2.so
+ln -s ~/anaconda3/pkgs/opencv3-3.1.0-py36_0/lib/python3.6/site-packages/cv2.cpython-36m-x86_64-linux-gnu.so ~/anaconda3/lib/python3.6/site-packages/cv2.so
+# Other .so files goes into. If you are copy pasting, make sure to put your <username>.
+sudo sh -c 'echo "/home/<username>/anaconda3/pkgs/opencv3-3.1.0-py36_0/lib" >> /etc/ld.so.conf.d/opencv.conf'
+```
+
+
+### Step 10: Install OpenCV for python3 (If opencv module doesnot for python, try this)
+``` conda install -c menpo opencv3```
