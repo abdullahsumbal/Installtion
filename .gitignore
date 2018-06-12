@@ -1,3 +1,7 @@
 venv
 .idea
 a.out
+*.prototxt
+*.caffemodel
+*.categories
+*.net
