@@ -42,3 +42,15 @@ g++ -std=c++11 opencl_test.cpp `pkg-config --libs --cflags opencv`
 ### Step 4: Look at the results
 1. CPU : FINAL AVERAGE FRAME PER SECOND: 229.231
 2. GPU : FINAL AVERAGE FRAME PER SECOND: 437.971
+
+### Extra Note:
+1. There is already a video file in the OpenCL folder along with the test file.
+2. The video output is turned off. It can be turned on by uncommenting line no. 69 in opencl_test.cpp
+    ``` 
+    //cv::imshow("Sobel blurred Frame", blurredSobel);
+    ```
+3. If you are getting the same results. Please make sure OpenCl is installed by checking the first line 
+that is printed on the screen by the running the test file.
+4. If the project is not compiling, you might have a different version of OpenCV.
+5. If the getting the same speed, play around with the environment variable. [Read more](http://answers.opencv.org/question/59115/opencv-30-beta-and-opencl-setdevice/) 
+
