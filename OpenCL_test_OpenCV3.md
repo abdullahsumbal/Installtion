@@ -52,5 +52,6 @@ g++ -std=c++11 opencl_test.cpp `pkg-config --libs --cflags opencv`
 3. If you are getting the same results. Please make sure OpenCl is installed by checking the first line 
 that is printed on the screen by the running the test file.
 4. If the project is not compiling, you might have a different version of OpenCV.
-5. If the getting the same speed, play around with the environment variable. [Read more](http://answers.opencv.org/question/59115/opencv-30-beta-and-opencl-setdevice/) 
+5. If the getting the same speed, play around with the environment variable. [Read more](http://answers.opencv.org/question/59115/opencv-30-beta-and-opencl-setdevice/). 
+6. This example is very much inspired from [here](http://answers.opencv.org/question/58331/opencv-300-and-opencl-benchmark-sobel-edge-detection/).
 
