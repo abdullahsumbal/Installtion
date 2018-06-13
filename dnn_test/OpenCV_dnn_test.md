@@ -1,4 +1,4 @@
-This document shows how to test GPU performance and GPU performance using OpenCL.
+This document shows how to test GPU performance and GPU performance using OpenCL..
 
 
 ### My Test Environment: 
