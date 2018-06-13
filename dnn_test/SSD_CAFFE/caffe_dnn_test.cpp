@@ -99,7 +99,7 @@ int main(int argc, char** argv)
     //! [Make forward pass]
 
     net.setPreferableBackend(1);
-    net.setPreferableTarget(1);
+    net.setPreferableTarget(0);
 
     double t1 = cv::getTickCount();
     Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());

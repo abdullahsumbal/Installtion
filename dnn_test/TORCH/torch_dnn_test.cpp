@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 
 
     net.setPreferableBackend(0);
-    net.setPreferableTarget(1);
+    net.setPreferableTarget(0);
 
     TickMeter tm;
 
