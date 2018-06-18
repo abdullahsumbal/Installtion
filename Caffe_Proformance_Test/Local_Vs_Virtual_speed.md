@@ -18,8 +18,11 @@ This document contains video performance results for [Caffe SSD](https://github.
     6. cuDNN version: 6.0 
     
 ### Test 1:
-In this test, SSD detection is run on the same video with different resolution on virtual machine and local machine. The total time taken for detection 
-and detection speed in frames per second is output for each run. 
+In this test, SSD detection is run on the same video with different resolution on virtual machine and local machine. 
+The total time taken for detection and detection speed in frames per second is recorded for each run. 
+The total time for detection only includes time for performing detection on all the frames in a video. 
+Total time  does not include any print statements or any data 
+manipulation of information return by the SSD detection.   
 
 Video Link: https://www.youtube.com/watch?v=gBk6oT8YrJQ \
 Downloader: QDownloader.net \
@@ -30,23 +33,23 @@ Note: the video is downloaded without sound.
 
 1. Virtual Machine 
     1. Resolution: 1920 x 1080\
-    work time = 155.825 seconds | Frame rate: 31.1953 fps
+    Total time = 155.825 seconds | Frame rate: 31.1953 fps
     2. Resolution: 1280 x 720\
-    work time = 142.237 seconds | Frame rate: 34.1754 fps
+    Total time = 142.237 seconds | Frame rate: 34.1754 fps
     3. Resolution: 854 x 480\
-    work time = 136.591 seconds | Frame rate: 35.588 fps
+    Total time = 136.591 seconds | Frame rate: 35.588 fps
     4. Resolution: 426 x 240\
-    work time = 131.317 seconds | Frame rate: 37.0172 fps
+    Total time = 131.317 seconds | Frame rate: 37.0172 fps
  
 2. Local Machine 
     1. Resolution: 1920 x 1080\
-    work time = 1189.22 seconds | Frame rate: 4.08756 fps
+    Total time = 1189.22 seconds | Frame rate: 4.08756 fps
     2. Resolution: 1280 x 720\
-    work time = 1180.41 seconds | Frame rate: 4.11807 fps
+    Total time = 1180.41 seconds | Frame rate: 4.11807 fps
     3. Resolution: 854 x 480\
-    work time = 1170.01 seconds | Frame rate: 4.15466 fps
+    Total time = 1170.01 seconds | Frame rate: 4.15466 fps
     4. Resolution: 426 x 240\
-    work time = 1173.08 seconds | Frame rate: 4.14379 fps
+    Total time = 1173.08 seconds | Frame rate: 4.14379 fps
     
     
 ### Conclusion:
