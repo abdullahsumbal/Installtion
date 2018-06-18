@@ -33,6 +33,6 @@ Follow the [steps](https://github.com/abdullahsumbal/SSD_OBJECT_COUNTER) to inst
 
 This is a very useful project that uses Opencv very efficiently. The bottle neck part is the detection.
 Even with the GPU, the performance did not improve. [Here](https://docs.google.com/document/d/1huiasSPZzirTSII2DWap6VNKX990WPU8EsVr0v4vqak/edit?usp=sharing)
- are some speed test conducted on the project. More opencv dnn results can be found [here](/dnn_test/OpenCV_dnn_test.md). In the end we decided to use this project and replace the opencv dnn (which is used for detection)
- with caffe. AS caffe uses CUDA, we expect to see performance improvements in detection time. 
+are some speed test conducted on the project. More opencv dnn results can be found [here](/dnn_test/OpenCV_dnn_test.md). In the end we decided to use this project and replace the opencv dnn (which is used for detection)
+with caffe. AS caffe uses CUDA, we expect to see performance improvements in detection time. 
 

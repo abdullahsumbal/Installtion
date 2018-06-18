@@ -69,6 +69,17 @@ sudo dpkg -i libcudnn7-dev_7.1.4.18-1+cuda8.0_amd64.deb
 sudo dpkg -i libcudnn7-doc_7.1.4.18-1+cuda8.0_amd64.deb 
 ```
 
+### Step 6: Check version
+Check CUDA version
+``` 
+nvcc --version
+```
+
+Check cuDNN version
+``` 
+ cat /usr/include/x86_64-linux-gnu/cudnn_v*.h | grep CUDNN_MAJOR -A 2
+```
+
 ### Note:
 This document is inspired by
 https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html
