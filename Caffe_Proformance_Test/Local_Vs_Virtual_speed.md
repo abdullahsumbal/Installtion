@@ -1,6 +1,6 @@
 This document contains video performance results for [Caffe SSD](https://github.com/weiliu89/caffe/tree/ssd).
 
-### My Test Environment:
+### Test Environments:
 1. Local Machine
     1. Operating System: Ubuntu 16.04.4 LTS
     2. OpenCV version: 3.3.1
@@ -19,12 +19,12 @@ This document contains video performance results for [Caffe SSD](https://github.
     
 ### Test 1:
 In this test, SSD detection is run on the same video with different resolution on virtual machine and local machine. The total time taken for detection 
-and detection speed in terms of frames per second is for each run. 
+and detection speed in frames per second is output for each run. 
 
-Video Link: https://www.youtube.com/watch?v=gBk6oT8YrJQ
-Downloader: QDownloader.net
-Video Length: 2 minutes 42 seconds
-Video Frame Rate: 30
+Video Link: https://www.youtube.com/watch?v=gBk6oT8YrJQ \
+Downloader: QDownloader.net \
+Video Length: 2 minutes 42 seconds \
+Video Frame Rate: 30 fps
 
 Note: the video is downloaded without sound.
 
@@ -46,6 +46,7 @@ Note: the video is downloaded without sound.
     3. Resolution: 854 x 480\
     work time = 1170.01 seconds | Frame rate: 4.15466 fps
     4. Resolution: 426 x 240\
+    work time = 1173.08 seconds | Frame rate: 4.14379 fps
     
     
 ### Conclusion:
