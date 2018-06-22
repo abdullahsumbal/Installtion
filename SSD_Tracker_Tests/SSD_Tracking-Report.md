@@ -96,7 +96,7 @@ Note: the video is downloaded without sound.
         Total Drawing time = 0.115335 seconds\
         Total Storing time = 2.13758 seconds
     3. Resolution: 854 x 480\
-        Total time = 13.4501 seconds | Frame rate: 29.8138 fps
+        Total time = 13.4501 seconds | Frame rate: 29.8138 fps\
         Total Detection time = 11.3153 seconds\
         Total Tracking time = 0.438523 seconds\
         Total Drawing time = 0.102125 seconds\
