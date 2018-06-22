@@ -27,7 +27,8 @@ manipulation of information return by the SSD detection.
 Video Link: https://www.youtube.com/watch?v=gBk6oT8YrJQ \
 Downloader: QDownloader.net \
 Video Length: 2 minutes 42 seconds \
-Video Frame Rate: 30 fps
+Video Frame Rate: 30 fps \
+SSD Detection: [models_VGGNet_VOC0712_SSD_300x300](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view)
 
 Note: the video is downloaded without sound.
 
