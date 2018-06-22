@@ -32,6 +32,7 @@ Downloader: QDownloader.net \
 Video Length: 13 seconds (first 400 frames)
 Video Frame Rate: 30 fps \
 SSD Detection: [models_VGGNet_VOC0712_SSD_300x300](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view)
+video output fcc: fourcc('M', 'J', 'P', 'G')
 
 Note: the video is downloaded without sound.
 
@@ -79,6 +80,7 @@ Downloader: QDownloader.net \
 Video Length: 13 seconds (first 400 frames)
 Video Frame Rate: 30 fps \
 SSD Detection: [models_VGGNet_VOC0712_SSD_300x300](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view)
+fcc video: cv::VideoWriter::fourcc('M', 'J', 'P', 'G')
 
 Note: the video is downloaded without sound.
 
@@ -111,7 +113,37 @@ Note: the video is downloaded without sound.
         
 #### Conclusion:
 Detection, tracking, drawing and storing time increases with increase in resolution. Storing time seems to increase the 
-most.
+most. The output file is very big in size. The original 1920 x 1080 video is 85.9 MB and the 13 second output 
+is 128.2MB. As the writing file is huge, it is taking a long time to write it to the disk. 
+
+Please also refer to the following test(s)
+1.  [Caffe test](/Caffe_Proformance_Test/Local_Vs_Virtual_speed.md)
+
+### Test 3:
+In this test, Output video size and storing time is recorded for different fourcc value. The frame goes through 
+drawing part where it is modified and then stored to the disk.\
+
+fourcc value: - 4-character code of the codec which is used to compress the video.\
+
+Video Link: https://www.youtube.com/watch?v=gBk6oT8YrJQ \
+Downloader: QDownloader.net \
+Video Length: 13 seconds (first 400 frames)
+Video Frame Rate: 30 fps \
+SSD Detection: [models_VGGNet_VOC0712_SSD_300x300](https://drive.google.com/file/d/0BzKzrI_SkD1_WVVTSmQxU0dVRzA/view)
+
+Note: the video is downloaded without sound.
+
+1. Virtual Machine 
+    1. VideoWriter::fourcc('P', 'I', 'M', '1') for MPEG-1 \
+        Total Storing time = 9.28308 seconds | Size: 34.7 MB
+    2. VideoWriter::fourcc('M', 'J', 'P', 'G') for Motion JPEG
+        Total Storing time = 4.22593 seconds | Size: 129.0 MB
+    3. VideoWriter::fourcc('M', 'P', '4', '2') for MPEG-4 variation of Microsoft
+        Total Storing time = 7.21563 seconds | Size: 41.6 MB
+        
+#### Conclusion:
+Video output writing depends on the encoding used. Further test will be conducted once the input video format is known.
+
 
 Please also refer to the following test(s)
 1.  [Caffe test](/Caffe_Proformance_Test/Local_Vs_Virtual_speed.md)
